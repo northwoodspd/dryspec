@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'dryspec/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'DRYSpec'
+  spec.name          = 'dryspec'
   spec.version       = DRYSpec::VERSION
   spec.authors       = ['Team Northwoods']
   spec.email         = ['brian.underwood@teamnorthwoods.com']
