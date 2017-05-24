@@ -1,0 +1,52 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 112
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - Guardfile
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'spec/**/*'
+
+# Brian has very strong opinions on this one.  See:
+#   https://github.com/bbatsov/ruby-style-guide/issues/329
+#   https://github.com/bbatsov/ruby-style-guide/pull/325
+Style/NegatedIf:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: semantic
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Performance/Casecmp:
+  Enabled: false
+
+# Special characters in comments is a fundamental human right
+Style/AsciiComments:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+

@@ -1,5 +1,5 @@
-require "dryspec/version"
+require 'dryspec/version'
 
-module Dryspec
-  # Your code goes here...
+module DRYSpec
+  autoload :Helpers, 'dryspec/helpers'
 end

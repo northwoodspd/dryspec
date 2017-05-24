@@ -1,3 +1,3 @@
-module Dryspec
-  VERSION = "0.1.0"
+module DRYSpec
+  VERSION = '0.1.0'.freeze
 end
