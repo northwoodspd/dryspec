@@ -20,6 +20,8 @@ Or install it yourself as:
 
 Then add `config.extend DRYSpec::Helpers` to your RSpec configuration like so:
 
+    require 'dryspec'
+
     RSpec.configure do |config|
       # ... configuration ...
 
