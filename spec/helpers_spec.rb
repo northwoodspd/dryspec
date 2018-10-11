@@ -39,5 +39,13 @@ module DRYSpec
 
       subject_should_not_raise
     end
+
+    describe 'for_subject' do
+      let(:foo) { 55 }
+      let(:bar) { 66 }
+
+      for_subject(:foo) { it { should eq(55) } }
+      for_subject(:bar) { it { should eq(66) } }
+    end
   end
 end
