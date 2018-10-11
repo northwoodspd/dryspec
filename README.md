@@ -55,6 +55,32 @@ By default when you give `let_context` a `Hash`, the `#inspect` of the `Hash` be
     let_context('Negative number', value: -1) { it { should eq 1 } }
     let_context('Big negative number', value: -10) { it { should eq -8 } }
 
+### `subject_for`
+
+A shortcut for a combination of `context` and `subject`
+
+    let(:foo) { 55 }
+    let(:bar) { 66 }
+
+    # Before
+    context 'subject: foo' do
+      subject { foo }
+
+      it { should eq(55) }
+    end
+
+    context 'subject: bar' do
+      subject { bar }
+
+      it { should eq(66) }
+    end
+
+    # After
+    for_subject(:foo) { it { should eq(55) } }
+    for_subject(:bar) { it { should eq(66) } }
+
+In the above the before and after are equivilent.  The `for_subject` helper automatically generates a context with the string `"subject: #{argument}"`.
+
 ### `subject_should_(not_)raise`
 
 The `subject_should_raise` and `subject_should_not_raise` are simply helpers which allow you to create an RSpec example which asserts if the subject of your tests will raise an exception.  For example:

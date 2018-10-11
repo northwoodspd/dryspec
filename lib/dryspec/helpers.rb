@@ -100,5 +100,36 @@ module DRYSpec
         expect { subject }.not_to raise_error error, message
       end
     end
+
+    # A shortcut for a combination of `context` and `subject`
+    #
+    # @example Multiple subjects from let variables
+    #
+    #   let(:foo) { 55 }
+    #   let(:bar) { 66 }
+    #
+    #   # Before
+    #   context 'subject: foo' do
+    #     subject { foo }
+    #
+    #     it { should eq(55) }
+    #   end
+    #
+    #   context 'subject: bar' do
+    #     subject { bar }
+    #
+    #     it { should eq(66) }
+    #   end
+    #
+    #   # After
+    #   for_subject(:foo) { it { should eq(55) } }
+    #   for_subject(:bar) { it { should eq(66) } }
+    def for_subject(variable, &block)
+      context "subject: #{variable}" do
+        subject { send(variable) }
+
+        instance_eval(&block)
+      end
+    end
   end
 end
