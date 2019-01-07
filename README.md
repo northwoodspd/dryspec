@@ -55,7 +55,7 @@ By default when you give `let_context` a `Hash`, the `#inspect` of the `Hash` be
     let_context('Negative number', value: -1) { it { should eq 1 } }
     let_context('Big negative number', value: -10) { it { should eq -8 } }
 
-### `subject_for`
+### `for_subject`
 
 A shortcut for a combination of `context` and `subject`
 
