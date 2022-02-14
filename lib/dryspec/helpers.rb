@@ -97,7 +97,11 @@ module DRYSpec
       it_string += " (#{message.inspect})" if message
 
       it it_string do
-        expect { subject }.not_to raise_error error, message
+        if error
+          expect { subject }.not_to raise_error error, message
+        else
+          expect { subject }.not_to raise_error
+        end
       end
     end
 

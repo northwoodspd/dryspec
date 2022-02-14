@@ -40,6 +40,19 @@ module DRYSpec
       subject_should_not_raise
     end
 
+    describe 'subject_should_not_raise with args. Best practice not to do this. (see warning generated)' do
+      before do
+        RSpec::Expectations.configuration.on_potential_false_positives = :warn
+      end
+
+      after do
+        RSpec::Expectations.configuration.on_potential_false_positives = :raise
+      end
+      subject { fail LoadError, 'Test' }
+
+      subject_should_not_raise ArgumentError, 'Should Not Raise This'
+    end
+
     describe 'for_subject' do
       let(:foo) { 55 }
       let(:bar) { 66 }

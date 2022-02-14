@@ -1,5 +1,6 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
+  NewCops: enable
 
 Style/MultilineBlockChain:
   Enabled: false
@@ -21,7 +22,7 @@ Metrics/BlockLength:
 Style/Documentation:
   Enabled: false
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Exclude:
     - 'spec/**/*'
 
@@ -37,9 +38,6 @@ Style/SignalException:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Performance/Casecmp:
-  Enabled: false
-
 # Special characters in comments is a fundamental human right
 Style/AsciiComments:
   Enabled: false
@@ -50,3 +48,5 @@ Style/SingleLineBlockParams:
 Lint/ShadowingOuterLocalVariable:
   Enabled: false
 
+Gemspec/RequireMFA:
+  Enabled: false
