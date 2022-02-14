@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'A Ruby gem to introduce RSpec helpers which can help you DRY up your specs'
   spec.homepage      = 'https://github.com/northwoodspd/dryspec'
   spec.license       = 'MIT'
+  spec.required_ruby_version = '>= 2.7.0'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -20,11 +21,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 1.14'
+  spec.add_development_dependency 'bundler', '~> 2.2.32'
   spec.add_development_dependency 'guard-rspec', '~> 4.7.3'
-  spec.add_development_dependency 'guard-rubocop', '~> 1.2.0'
+  spec.add_development_dependency 'guard-rubocop', '~> 1.5.0'
   spec.add_development_dependency 'guard-yard', '~> 2.2.0'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rspec_junit_formatter', '~> 0.5.1'
   spec.add_development_dependency 'yard', '~> 0.9.9'
 end
